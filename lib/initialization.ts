@@ -15,45 +15,53 @@ import {
   initReactComponentRegistry,
   ReactContextAdapter,
 } from '@optimizely/cms-sdk/react/server';
-import BlankExperience from '../components/pages/BlankExperience';
-import Start, { StartPage } from '../components/pages/Start';
-import BlankSection from '../components/sections/Blank';
-import ImageCard, { ImageCardComponent } from '../components/elements/ImageCard';
-import Heading, {
+import BlankExperience from '../components/pages/BlankExperience/BlankExperience';
+import Start from '../components/pages/Start/Start';
+import { StartPage } from '../components/pages/Start/model';
+import BlankSection from '../components/sections/Blank/Blank';
+import ImageCard from '../components/elements/ImageCard/ImageCard';
+import { ImageCardComponent } from '../components/elements/ImageCard/model';
+import Heading from '../components/elements/Heading/Heading';
+import {
   HeadingComponent,
   HeadingDisplayTemplate,
-} from '../components/elements/Heading';
-import HorizontalRuler, {
-  HorizontalRulerComponent,
-} from '../components/elements/HorizontalRuler';
-import RichText, { RichTextComponent } from '../components/elements/RichText';
-import Image, { ImageComponent } from '../components/elements/Image';
-import Video, { VideoComponent } from '../components/elements/Video';
-import Hero, { HeroSection } from '../components/sections/Hero';
+} from '../components/elements/Heading/model';
+import HorizontalRuler from '../components/elements/HorizontalRuler/HorizontalRuler';
+import { HorizontalRulerComponent } from '../components/elements/HorizontalRuler/model';
+import RichText from '../components/elements/RichText/RichText';
+import { RichTextComponent } from '../components/elements/RichText/model';
+import Image from '../components/elements/Image/Image';
+import { ImageComponent } from '../components/elements/Image/model';
+import Video from '../components/elements/Video/Video';
+import { VideoComponent } from '../components/elements/Video/model';
+import Hero from '../components/sections/Hero/Hero';
+import { HeroSection } from '../components/sections/Hero/model';
 import {
   ColumnCardDisplayTemplate,
   ColumnDisplayTemplate,
   RowDisplayTemplate,
   SectionDisplayTemplate,
 } from '../components/sections/DisplayTemplates';
-import Button, {
+import Button from '../components/elements/Button/Button';
+import {
   ButtonComponent,
   ButtonDisplayTemplate,
-} from '../components/elements/Button';
-import Product, { ProductPage } from '../components/pages/Product';
-import { EyebrowComponent } from '../components/blocks/Eyebrow';
-import Standard, { StandardPage } from '../components/pages/Standard';
-import News, { NewsPage } from '../components/pages/News';
-import TeaserCard, {
-  TeaserCardComponent,
-} from '../components/elements/TeaserCardComponent';
-import NewsEventsList, {
-  NewsEventsListContentType,
-} from '../components/blocks/NewsEventsList';
-import EventCard, { EventCardComponent } from '../components/elements/EventCard';
-import EventCardsList, {
-  EventCardsListContentType,
-} from '../components/blocks/EventCardsList';
+} from '../components/elements/Button/model';
+import Product from '../components/pages/Product/Product';
+import { ProductPage } from '../components/pages/Product/model';
+import { EyebrowComponent } from '../components/blocks/Eyebrow/model';
+import Standard from '../components/pages/Standard/Standard';
+import { StandardPage } from '../components/pages/Standard/model';
+import News from '../components/pages/News/News';
+import { NewsPage } from '../components/pages/News/model';
+import TeaserCard from '../components/elements/TeaserCard/TeaserCard';
+import { TeaserCardComponent } from '../components/elements/TeaserCard/model';
+import NewsEventsList from '../components/blocks/NewsEventsList/NewsEventsList';
+import { NewsEventsListContentType } from '../components/blocks/NewsEventsList/model';
+import EventCard from '../components/elements/EventCard/EventCard';
+import { EventCardComponent } from '../components/elements/EventCard/model';
+import EventCardsList from '../components/blocks/EventCardsList/EventCardsList';
+import { EventCardsListContentType } from '../components/blocks/EventCardsList/model';
 import FormContainer from '../components/forms/FormContainer';
 import FormInput from '../components/forms/FormInput';
 import FormSubmit from '../components/forms/FormSubmit';

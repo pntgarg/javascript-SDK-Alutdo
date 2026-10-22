@@ -2,6 +2,7 @@ import { buildConfig } from '@optimizely/cms-sdk';
 
 export default buildConfig({
   components: [
+    './components/**/model.ts',
     './components/*.tsx',
     './components/**/*.tsx',
     './components/contracts/*.ts',
