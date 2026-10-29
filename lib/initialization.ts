@@ -50,6 +50,10 @@ import {
 import Product from '../components/pages/Product/Product';
 import { ProductPage } from '../components/pages/Product/model';
 import { EyebrowComponent } from '../components/blocks/Eyebrow/model';
+import { ButtonBlock } from '../components/blocks/ButtonBlock/model';
+import { MenuNavigationBlock } from '../components/blocks/MenuNavigationBlock/model';
+import { MegaMenuGroupBlock } from '../components/blocks/MegaMenuGroupBlock/model';
+import { LayoutSettingsBlock } from '../components/blocks/LayoutSettingsBlock/model';
 import Standard from '../components/pages/Standard/Standard';
 import { StandardPage } from '../components/pages/Standard/model';
 import News from '../components/pages/News/News';
@@ -88,6 +92,10 @@ export function initialize() {
     StartPage,
     NewsPage,
     EyebrowComponent,
+    ButtonBlock,
+    MenuNavigationBlock,
+    MegaMenuGroupBlock,
+    LayoutSettingsBlock,
     HeroSection,
     ImageCardComponent,
     ButtonComponent,

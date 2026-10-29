@@ -9,14 +9,25 @@ import { SearchModal } from './SearchModal';
 import type { NavigationItem } from '../../../lib/navigation';
 import type { SearchableContent } from '../../../lib/search';
 
+export type HeaderServiceButton = {
+  key: string;
+  text: string;
+  href: string;
+  variant?: string | null;
+};
+
 export const HeaderClient = ({
   navigationItems,
   mobileNavItems,
   searchableContent,
+  logoUrl,
+  serviceButtons = [],
 }: {
   navigationItems: NavigationItem[];
   mobileNavItems: NavigationItem[];
   searchableContent: SearchableContent[];
+  logoUrl?: string | null;
+  serviceButtons?: HeaderServiceButton[];
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
@@ -44,7 +55,9 @@ export const HeaderClient = ({
       >
         <div className='container mx-auto flex items-center justify-between md:py-5 py-6'>
           <Link href='/'>
-            <Logo className='h-5' />
+            {logoUrl ?
+              <img src={logoUrl} alt='' className='h-5' />
+            : <Logo className='h-5' />}
           </Link>
           <div className='flex gap-6'>
             <nav className='hidden lg:flex gap-6 translate-y-0.5'>
@@ -63,6 +76,15 @@ export const HeaderClient = ({
               })}
             </nav>
             <div className='flex items-center gap-4'>
+              {serviceButtons.map(button => (
+                <Link
+                  key={button.key}
+                  href={button.href}
+                  className='hidden md:inline-flex text-sm font-semibold hover:opacity-80'
+                >
+                  {button.text}
+                </Link>
+              ))}
               <button
                 onClick={() => setSearchModalOpen(true)}
                 className='p-1 hover:bg-gray-100 rounded-lg transition-colors'

@@ -3,6 +3,9 @@ import { setContext, withAppContext } from '@optimizely/cms-sdk/react/server';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
+import { Footer } from '../../components/layouts/shared/Footer';
+import { Header } from '../../components/layouts/shared/Header';
+import { getFooterData, getHeaderData } from '../../lib/appLayout';
 
 type Props = {
   params: Promise<{ slug?: string[] }>;
@@ -46,14 +49,29 @@ export async function Page({ params }: Props) {
     notFound();
   }
 
+  const locale = content._metadata.fallbackForLocale ?? content._metadata.locale ?? 'en';
+
   setContext({
     currentContent: content,
     key: content._metadata.key,
     type: content._metadata.types[0],
-    locale: content._metadata.fallbackForLocale ?? content._metadata.locale,
+    locale,
   });
 
-  return <pre>{JSON.stringify(content, null, 2)}</pre>;
+  const [header, footer] = await Promise.all([
+    getHeaderData(locale),
+    getFooterData(locale),
+  ]);
+
+  return (
+    <>
+      <Header layout={header} locale={locale} />
+      <main className='pt-32'>
+        <pre>{JSON.stringify(content, null, 2)}</pre>
+      </main>
+      <Footer layout={footer} locale={locale} />
+    </>
+  );
 }
 
 export default withAppContext(Page);

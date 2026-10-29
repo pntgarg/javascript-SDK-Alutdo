@@ -10,3 +10,6 @@ next-env.d.ts
 
 certificates
 node_modules
+
+# typescript incremental cache
+*.tsbuildinfo

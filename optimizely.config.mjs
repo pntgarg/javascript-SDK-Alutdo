@@ -7,7 +7,23 @@ export default buildConfig({
     './components/**/*.tsx',
     './components/contracts/*.ts',
   ],
-  propertyGroups: [],
+  propertyGroups: [
+    {
+      key: 'header',
+      displayName: 'Header',
+      sortOrder: 10,
+    },
+    {
+      key: 'footer',
+      displayName: 'Footer',
+      sortOrder: 20,
+    },
+    {
+      key: 'application',
+      displayName: 'Advanced',
+      sortOrder: 30,
+    },
+  ],
   locale: ['en'],
   content: [
     {
